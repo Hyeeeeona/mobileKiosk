@@ -25,7 +25,7 @@ SECRET_KEY = '-d()9mzfh5=5dm6%&g$_ob(%!@ea$$d5ul-_!izbh$$_(4psh$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kg2p.pythonanywhere.com']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,12 @@ WSGI_APPLICATION = 'mobileKiosk.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kg2p$mobilekiosk',
+        'USER': 'kg2p',
+        'PASSWORD': 'epdlxjqpdltm',
+        'HOST': 'kg2p.mysql.pythonanywhere-services.com',
+
     }
 }
 
