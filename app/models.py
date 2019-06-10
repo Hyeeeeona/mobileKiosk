@@ -16,7 +16,6 @@ class TbOrder(models.Model):
     reservation_time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'TB_ORDER'
 
 
@@ -28,7 +27,6 @@ class TbOrderDetail(models.Model):
     total = models.IntegerField()
 
     class Meta:
-        managed = False
         db_table = 'TB_ORDER_DETAIL'
 
 
@@ -40,7 +38,6 @@ class TbShopBusinessInfo(models.Model):
     registration_number = models.CharField(max_length=45, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'TB_SHOP_BUSINESS_INFO'
 
 
@@ -54,8 +51,10 @@ class TbShopInfo(models.Model):
     introduction = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'TB_SHOP_INFO'
+
+        def __str__(self):
+            return self.shop_name
 
 
 class TbShopMenu(models.Model):
@@ -66,5 +65,4 @@ class TbShopMenu(models.Model):
     menu_price = models.IntegerField()
 
     class Meta:
-        managed = False
         db_table = 'TB_SHOP_MENU'

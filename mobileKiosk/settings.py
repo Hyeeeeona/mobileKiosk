@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-d()9mzfh5=5dm6%&g$_ob(%!@ea$$d5ul-_!izbh$$_(4psh$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['kg2p.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'mobileKiosk.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kg2p$mobilekiosk',
-        'USER': 'kg2p',
-        'PASSWORD': 'epdlxjqpdltm',
-        'HOST': 'kg2p.mysql.pythonanywhere-services.com',
+        'NAME': 'mobilekiosk',
+        'USER': 'root',
+        'PASSWORD': 'epdlxjqpdltm!',
+        'HOST': 'localhost',
 
     }
 }
