@@ -8,4 +8,7 @@ router = routers.SimpleRouter()
 #router.register('shopinfo', shopinfo, 'shopinfo')
 #router.register('shopinfo/<int:pk>', shopdetail, 'shopdetail')
 router.register(r'shopinfo', views.ShopInfoViewSet)
+router.register(r'order', views.OrderInfoViewSet)
+router.register(r'orderdetail', views.OrderDetailViewSet)
+
 urlpatterns = router.urls

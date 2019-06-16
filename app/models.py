@@ -9,7 +9,7 @@ from django.db import models
 
 
 class TbOrder(models.Model):
-    order_id = models.IntegerField(primary_key=True)
+    order_id = models.AutoField(primary_key=True)
     order_time = models.DateTimeField()
     name = models.CharField(max_length=10)
     phone_number = models.CharField(max_length=32)
@@ -20,7 +20,7 @@ class TbOrder(models.Model):
 
 
 class TbOrderDetail(models.Model):
-    order = models.ForeignKey(TbOrder, models.DO_NOTHING)
+    order_id = models.ForeignKey(TbOrder, models.DO_NOTHING, db_column='order_id')
     menu_name = models.CharField(max_length=32)
     menu_size = models.CharField(max_length=32, blank=True, null=True)
     quantity = models.IntegerField()
@@ -52,9 +52,6 @@ class TbShopInfo(models.Model):
 
     class Meta:
         db_table = 'TB_SHOP_INFO'
-
-        def __str__(self):
-            return self.shop_name
 
 
 class TbShopMenu(models.Model):
