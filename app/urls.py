@@ -10,5 +10,6 @@ router = routers.SimpleRouter()
 router.register(r'shopinfo', views.ShopInfoViewSet)
 router.register(r'order', views.OrderInfoViewSet)
 router.register(r'orderdetail', views.OrderDetailViewSet)
+router.register(r'shopmenu', views.ShopMenuViewSet)
 
 urlpatterns = router.urls

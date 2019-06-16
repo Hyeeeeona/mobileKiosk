@@ -55,7 +55,7 @@ class TbShopInfo(models.Model):
 
 
 class TbShopMenu(models.Model):
-    shop = models.ForeignKey(TbShopInfo, models.DO_NOTHING)
+    shop_id = models.ForeignKey(TbShopInfo, models.DO_NOTHING, db_column='shop_id')
     menu_name = models.CharField(max_length=32)
     menu_size = models.CharField(max_length=32, blank=True, null=True)
     hotorcold = models.IntegerField(blank=True, null=True)
