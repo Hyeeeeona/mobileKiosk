@@ -45,13 +45,14 @@ class TbOrder(models.Model):
     reservation_time = models.DateTimeField(blank=True, null=True)
     shop_id = models.ForeignKey(TbShopInfo, models.DO_NOTHING, db_column='shop_id', default=1)
     total = models.IntegerField(default=0)
+    status = models.IntegerField(default=0)
 
     class Meta:
         db_table = 'TB_ORDER'
 
 
 class TbOrderDetail(models.Model):
-    order_id = models.ForeignKey(TbOrder, models.DO_NOTHING, db_column='order_id')
+    order_id = models.IntegerField(default=0)
     menu_name = models.CharField(max_length=32)
     menu_size = models.CharField(max_length=32, blank=True, null=True)
     quantity = models.IntegerField()
@@ -59,16 +60,4 @@ class TbOrderDetail(models.Model):
 
     class Meta:
         db_table = 'TB_ORDER_DETAIL'
-
-
-class TbShopBusinessInfo(models.Model):
-    shop = models.ForeignKey('TbShopInfo', models.DO_NOTHING)
-    representative = models.CharField(max_length=10, blank=True, null=True)
-    business_name = models.CharField(max_length=32, blank=True, null=True)
-    address = models.CharField(max_length=45, blank=True, null=True)
-    registration_number = models.CharField(max_length=45, blank=True, null=True)
-
-    class Meta:
-        db_table = 'TB_SHOP_BUSINESS_INFO'
-
 
